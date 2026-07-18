@@ -8,6 +8,8 @@ To install any linux or windows version, you must create a live ISO containing t
 
 ## Dual Booting
 
+**please for the love of god, remove fucking bitlocker before doing anything.**
+
 Start from windows, create an empty partition if using one drive for the dual boot. Otherwise, skip this step.
 
 # Arch install
