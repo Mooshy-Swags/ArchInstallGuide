@@ -2,17 +2,21 @@
 
 This guide is simple, but goes through all of the important ideas for installing Arch.
 
+## Live ISO
+
+To install any linux or windows version, you must create a live ISO containing the installer. This can be done from windows by using a tool like rufus or ventoy to write into a usb stick. Ventoy is preferred if you like to keep the rest of the drive being written to, but rufus is usally easier to use. (Use DD mode for rufus)
+
 ## Dual Booting
 
 Start from windows, create an empty partition if using one drive for the dual boot. Otherwise, skip this step.
+
+# Arch install
 
 Open into BIOS/UEFI (UEFI is an upgraded version of BIOS that most modern systems come with) using:
 
 ```bat
 shutdown /r /o /f /t 0
 ```
-
-# Arch install
 
 ## BIOS/UEFI setup
 
@@ -36,7 +40,9 @@ Now partition the disk using (replace <disk name> with what you got above.):
 cfdisk /dev/<disk name>
 ```
 
-Partition should have a minimum of 3 parts. For this guide, I will only follow with 3. 
+Partition should have a minimum of 2 parts. For this guide, I will only follow with 3. 
+
+Swap partition is not required but is useful for anything beyond 100GB of filesystem or low RAM devices. For low end usecases, its not needed.
 
 
 Create a **efi\_system\_partition** with size ~1G
@@ -128,10 +134,12 @@ exit
 ### Installing Kernel
 
 
-Run the following (unless you are using an **INTEL CPU**, in which cause, replace with *intel-ucode*
+Run the following (unless you are using an **INTEL CPU**, in which cause, replace with *intel-ucode* 
+
+If you wish to install the lts (Long time support) kernel as well, add "linux-lts linux-lts-headers"
 
 ```sh
-pacstrap -K /mnt base linux linux-firmware *amd-ucode* man-db
+pacstrap -K /mnt base linux linux-firmware linux-headers *amd-ucode* man-db
 genfstab -U /mnt >> /mnt/etc/fstab
 ```
 
@@ -167,6 +175,8 @@ We also choose the terminal text editor now. The main choices are Nano and Vim (
 pacman -S nano
 pacman -S vim nvim
 ```
+
+Basic Nano operations is Ctrl+O -> Enter for saving, and Ctrl+X to exit. For VIM usage, refer to the (Neo)VIM page or find it online.
 
 Finally, we need to make sure we have admin for downloading things later.
 
@@ -335,11 +345,11 @@ pacman -S xorg plasma sddm
 
 Now if you have an NVIDIA GPU, run the following:
 
-```sh
-pacman -S nvidia nvidia-utils nvidia-settings
-```
+(If you don't have the lts version, you can use nvidia-open instead of dkms in the case of the nvidia drivers being weird.)
 
-(Note: if this command doesn't work, replace "nvidia" with "nvidia-open" as there has been a name change)
+```sh
+pacman -S nvidia-open-dkms nvidia-utils nvidia-settings
+```
 
 We are finally at the point of enabling our desktop environment. **check that all previous steps have been completely executed properly (especially for the Networking inside the install) otherwise, we may have issues**
 
@@ -365,7 +375,7 @@ The apps you should download is:
 
 And some that you may want:
 
- - Equicord (Better, moddable discord)
+ - Vesktop (Better, moddable discord)
  - Rnote (Note taking)
  - VLC (Video playing GOAT)
  - Honkers Star railway (ykyk)
