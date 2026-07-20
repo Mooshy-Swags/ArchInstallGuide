@@ -67,9 +67,9 @@ again, keeping note of the partitions.
 
 EG: (The <partition name> will be kept throughout the following part using \*)
 
-efi\_system\_partition : nvme0n1p1
-swap\_partition        : nvme0n1p2
-linux\_filesystem      : nvme0n1p3
+ - efi\_system\_partition : nvme0n1p1
+ - swap\_partition        : nvme0n1p2
+ - linux\_filesystem      : nvme0n1p3
 
 ---
 
