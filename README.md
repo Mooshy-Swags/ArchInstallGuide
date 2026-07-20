@@ -167,7 +167,7 @@ hwclock --systohc
 We now need to add the network manager for our install. **MAKE SURE THIS IS DEFINITELY INSTALLED NOW, OR WE NEED TO RE-ENTER THE INSTALLER AGAIN WHICH IS ANNOYING.**
 
 ```sh
-pacman -S NetworkManager
+pacman -S networkmanager
 ```
 
 We also choose the terminal text editor now. The main choices are Nano and Vim (or Neo-Vim). Nano is more "normal" in the operations. Most things should be more obvious (Though I personally dislike it).
