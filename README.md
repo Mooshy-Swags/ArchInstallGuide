@@ -322,10 +322,15 @@ This starts our Network Manager. **RUNNING BOTH COMMANDS IS ESSENTIAL** Now we r
 nmcli radio wifi
 ```
 
-to get our wifi device name. It is possibly different to what we got before, so be careful. We will call it <device name>
+to see that the wifi card is enabled (or disabled).
 
 ```sh
 nmcli device
+```
+
+The above gives the list of wifi devices. We want the one that says "wifi" after it (not wifi-p2p). It is possibly different to what we got before, so be careful. We will call it <device name>
+
+```sh
 nmcli device wifi list
 ```
 
