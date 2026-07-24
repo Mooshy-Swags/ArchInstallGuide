@@ -328,7 +328,7 @@ If this throws a "does not exist" error, we have to go back to our linux install
 Well yes, of course. We didn't install bluetooth!
 
 ```sh
-sudo pacman -S bluez bluez-util
+sudo pacman -S bluez bluez-utils
 sudo systemctl enable bluetooth
 sudo systemctl start bluetooth
 ```
