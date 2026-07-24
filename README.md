@@ -286,7 +286,7 @@ and the password from before. (I said it's important.)
 
 ### User
 
-We also add a user profile. This password is the one you will be using to normally log into the user. Make sur ethis one is definitely one you remember. Unfortunately, linux doesn't really allow you to use short passwords, fingerprints or face recognition.
+We also add a user profile. This password is the one you will be using to normally log into the user. Make sure this one is definitely one you remember. Unfortunately, linux doesn't really allow you to use short passwords, fingerprints or face recognition.
 
 ```sh
 useradd -m -G wheel <username>
