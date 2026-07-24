@@ -48,14 +48,14 @@ There are also a couple of cool terminal emulators that allow you to have multip
 
 Directories are important. They tell you where things are in file. Some things make it easier.
 
- - ~ - The tilda points to $HOME for the current user.
- - . - A single dot points to $PATH or current path.
- - .. - A double dot points to the parent directory.
+ - ~ \- The tilda points to $HOME for the current user.
+ - . \- A single dot points to $PATH or current path.
+ - .. \- A double dot points to the parent directory.
 
 These are the main 3 directory shortcuts.
 
 Some others are the
- - * - every file in under a directory
+ - \* \- every file in under a directory
 
 Just like any other OS, you can enter a sub-path from the CWD, instead of the absolute path.
 
