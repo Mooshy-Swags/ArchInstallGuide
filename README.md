@@ -710,6 +710,29 @@ There are other alternatives to btop, like go-top and more. Try them all out, se
 
 ---
 
+### Systemctl
+
+Systemctl is the command used for managing applications for startup and others.
+
+```sh
+sudo systemctl enable <service>
+```
+
+Allows the service to be ran on startup.
+
+```sh
+sudo systemctl start <service>
+```
+just runs the service for this boot.
+
+Combining both is
+```sh
+sudo systemctl enable --now <service>
+```
+allows you to have the service startup on boot and have it run for this boot as well.
+
+---
+
 ### Ranger
 
 Annoyed at moving through folders and directories using cd? You can use ranger to move using vim commands!
@@ -766,3 +789,19 @@ and apply the fcitx5 in
 restart, then
 > Input Method >> Add Input Method
 and add mozc/hangul
+
+---
+
+### Tailscale
+
+A very useful tool when wanting to connect devices on a pseudo-LAN for a lot of different projects and other things.
+
+```sh
+sudo pacman -S tailscale
+sudo systemctl enable --now tailscaled
+sudo tailscale up
+```
+
+Allows you to connect to a tailnet.
+
+I suggest you to find out more about tailscale if you are interested.
