@@ -200,6 +200,8 @@ Now uncomment the following line:
 en_US.UTF-8
 ```
 
+> en_US.UTF-8
+
 and save and exit out of the file.
 
 Now run
