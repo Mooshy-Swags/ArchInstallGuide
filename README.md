@@ -19,43 +19,43 @@ This guide will be going through ARCH linux specifically. For any other distro, 
 ## 1. Live ISO
 
 1. Download the ISO from website. [For Arch ISO](https://archlinux.org/download/)
-  - For any other linux distros, install the ISO from their websites.
-  - For most users, download using the WorldWide mirror (Accessible through the links before the country specific ones at the bottom)
-  - If you prefer to torrent them, you can do that as well. I recommend using aria2c to download torrents.
+    - For any other linux distros, install the ISO from their websites.
+    - For most users, download using the WorldWide mirror (Accessible through the links before the country specific ones at the bottom)
+    - If you prefer to torrent them, you can do that as well. I recommend using aria2c to download torrents.
 
 2. Set up the disk for writing the ISO to.
-  - This should be (preferably) a USB flash drive, or any other external (or internal) disk.
-  - It is preferred to be in a partition separate from the one you are trying to install linux to.
+    - This should be (preferably) a USB flash drive, or any other external (or internal) disk.
+    - It is preferred to be in a partition separate from the one you are trying to install linux to.
 
 3. Install the ISO to the disk.
-  - Using Ventoy (recommended):
-    1. Install the [Ventoy Installer](https://www.ventoy.net/en/download.html)
-    2. Unzip and run the installer.
-    3. Write Ventoy into the disk that you want to have the Live ISO on. (You should see a drive size when doing this. Make sure that it is the correct size you want it.)
-    4. Move the ISO you downloaded into the newly created VENTOY drive.
-  - Using Rufus:
-    1. Install the [Rufus Installer](https://rufus.ie/en/#download)
-    2. Run the installer.
-    3. Select the drive and the ISO
-      - **WARNING!** Rufus will usually remove the entire drive to replace with this ISO. This method is only prefered if you want to replace the entire disk.
-    4. Click start.
-    5. Select the DD Image mode, then click ok.
+    - Using Ventoy (recommended):
+      1. Install the [Ventoy Installer](https://www.ventoy.net/en/download.html)
+      2. Unzip and run the installer.
+      3. Write Ventoy into the disk that you want to have the Live ISO on. (You should see a drive size when doing this. Make sure that it is the correct size you want it.)
+      4. Move the ISO you downloaded into the newly created VENTOY drive.
+    - Using Rufus:
+      1. Install the [Rufus Installer](https://rufus.ie/en/#download)
+      2. Run the installer.
+      3. Select the drive and the ISO
+        - **WARNING!** Rufus will usually remove the entire drive to replace with this ISO. This method is only prefered if you want to replace the entire disk.
+      4. Click start.
+      5. Select the DD Image mode, then click ok.
 
 ## 1.5. Setting up Windows for dual booting
 
 Skip this section if you are not dual booting windows or not planning on keeping windows.
 
 1. Remove Bitlocker
-  - You can either stop bitlocker, or completely remove its encryption. In the latter case, it can increase read-write speeds on windows.
-  - Removing bitlocker doesn't affect security as much as they want you to think. Unless you are being careless, it shouldn't matter much.
+    - You can either stop bitlocker, or completely remove its encryption. In the latter case, it can increase read-write speeds on windows.
+    - Removing bitlocker doesn't affect security as much as they want you to think. Unless you are being careless, it shouldn't matter much.
 
 2. Create a partition
-  - **WARNING!** Changing the partition size later can be difficult and time consuming. It is preferable for you to give a decent size to the linux partition to begin with.
-  - You can either make a partition for linux or use another drive entirely. Either method works perfectly fine.
-  1. Use the Windows Partition Manager or a 3rd party tool (Minitool Partition Wizard, or similar)
-  2. Shrink the Windows partition. (Change the Microsoft Basic Data partition. Not the EFI system or Recovery.)
-  - You may find that the built in partition tool cannot partition as much as the filespace that is empty. Use a disk de-fragmenter, optimiser and Minitool Partition Wizard instead.
-  - **NOTE:** This partition doesn't need to be formatted, as we will be doing this later.
+    - **WARNING!** Changing the partition size later can be difficult and time consuming. It is preferable for you to give a decent size to the linux partition to begin with.
+    - You can either make a partition for linux or use another drive entirely. Either method works perfectly fine.
+    1. Use the Windows Partition Manager or a 3rd party tool (Minitool Partition Wizard, or similar)
+    2. Shrink the Windows partition. (Change the Microsoft Basic Data partition. Not the EFI system or Recovery.)
+    - You may find that the built in partition tool cannot partition as much as the filespace that is empty. Use a disk de-fragmenter, optimiser and Minitool Partition Wizard instead.
+    - **NOTE:** This partition doesn't need to be formatted, as we will be doing this later.
 
 ## 2. BIOS/UEFI Setup
 
@@ -216,16 +216,16 @@ As you may (or may not) know, the kernel is the layer of connection between you 
 These kernels can also be replaced, removed, or added at any time. You do not need to choose now, and go with stable if you would like. 
 
 - Stable / Mainline
-  - It is the newest and most bleeding edge kernel.
-  - \<kernel\> = linux, \<headers\> = linux-headers
+    - It is the newest and most bleeding edge kernel.
+    - \<kernel\> = linux, \<headers\> = linux-headers
 - Long-Term Support
-  - This is the best for most people. If ever in doubt, go with this one.
-  - This kernel is for people who have been having issues with the computers, or for those who are worried about stability on the mainline kernel.
-  - If you don't care about the best of the best and want as little problems as possible, this one is the go-to.
-  - \<kernel\> = linux-lts, \<headers\> = linux-lts-headers
+    - This is the best for most people. If ever in doubt, go with this one.
+    - This kernel is for people who have been having issues with the computers, or for those who are worried about stability on the mainline kernel.
+    - If you don't care about the best of the best and want as little problems as possible, this one is the go-to.
+    - \<kernel\> = linux-lts, \<headers\> = linux-lts-headers
 - Performance / Zen
-  - This kernel is mostly for those who care about latency. Probably just use the CachyOS kernel instead. (CachyOS kernel is to be added later in Chapter 6. Don't bother with thinking about it now.)
-  - \<kernel\> = linux-zen, \<headers\> = linux-zen-headers
+    - This kernel is mostly for those who care about latency. Probably just use the CachyOS kernel instead. (CachyOS kernel is to be added later in Chapter 6. Don't bother with thinking about it now.)
+    - \<kernel\> = linux-zen, \<headers\> = linux-zen-headers
 
 Now for the CPU microcode. This is basically additional code for CPU manufacturers to fix their crappy CPUs after they have sold them.
 
