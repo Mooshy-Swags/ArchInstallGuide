@@ -3,7 +3,7 @@
 ### Basic Guideline for ANY linux distro
 
 1. [Create a live ISO onto a disk](#1-live-iso)
-  - [Steps for dual booting windows](#15-setting-up-windows-for-dual-booting)
+    - [Steps for dual booting windows](#15-setting-up-windows-for-dual-booting)
 2. [Setup the BIOS/UEFI for linux](#2-biosuefi-setup)
 3. [Boot into the live ISO](#3-boot-into-live-iso)
 4. [Use the live ISO to write a linux install into the main disk](#4-installing-on-live-iso)
