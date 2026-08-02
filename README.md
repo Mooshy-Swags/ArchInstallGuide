@@ -510,7 +510,7 @@ pacman -S xorg plasma sddm
 
 ---
 
-For those with an nvidia GPU, firstly, my condolences, but importantly, we need to choose which nvidia driver to install based on the kernel.
+For those with an nvidia GPU, firstly, my condolences, but more importantly, we need to choose which nvidia driver to install based on the kernel.
 
 > Normal kernel = nvidia-open
 
