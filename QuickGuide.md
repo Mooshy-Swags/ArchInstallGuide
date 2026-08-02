@@ -114,7 +114,8 @@ reboot
 ## Login
 
 > root
-> <password>
+
+> \<password\>
 
 ## User Setup
 
@@ -123,7 +124,7 @@ useradd -m -G wheel <username>
 passwd <username>
 ```
 
-> <password>
+> \<password\>
 
 ```sh
 EDITOR=vim visudo
