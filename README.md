@@ -66,6 +66,7 @@ You have multiple ways of launching into UEFI. You should try the DEL/F2 mashing
 shutdown /r /o /f /t 0
 ```
 You should enter a blue Recovery menu. Here, follow the following menus.
+
 > Troubleshoot >> Advanced Options >> UEFI Firmware Settings
 
 ### Settings to change
@@ -256,8 +257,11 @@ arch-chroot /mnt
 ```
 
 Doing this should move you from
+
 > root@archiso ~ #
+
 to
+
 > [root@archiso /]#
 
 Or something similar.
@@ -297,8 +301,11 @@ pacman -S vim nvim
 ```
 
 **NOTE:** For nano, saving is done by
+
 > CTRL-O >> Enter
+
 and exiting through
+
 > CTRL-X
 
 We also need sudo. This is universally used in linux for Administrative Privilages (In linux, we refer to admin as root.)
@@ -322,6 +329,7 @@ nano /etc/locale.gen
 ```
 
 Here, uncomment the line (Remove the #)
+
 > en\_US.UTF-8
 
 Save and exit the file.
@@ -335,7 +343,9 @@ Which grabs the language we uncommented. Now we open the following file (its a d
 nano /etc/locale.conf
 ```
 and add
+
 > LANG=en\_US.UTF-8
+
 to the beginning of the file.
 
 ---
@@ -350,6 +360,7 @@ nano /etc/hostname
 The system name is usually all lowercase, and cannot have spaces. Use dashes (-) instead of spaces.
 
 Something like:
+
 > arch-laptop
 
 It is fully up to you to choose. We will later add the user, and the username.
@@ -376,7 +387,9 @@ Now we edit the following
 nano /etc/default/grub
 ```
 by uncommenting
+
 > GRUB\_DISABLE\_OS\_PROBER=false
+
 Make sure to keep the value as **false**
 
 Then we set the boot loader up.
@@ -414,8 +427,11 @@ If we save and exit, we should be greeted with the grub menu, which can be pause
 The login options should be
 
 Username:
+
 > root
+
 Password from before (*I did say it's important!*)
+
 > \<password\>
 
 ---
@@ -440,8 +456,11 @@ Open the file by running
 EDITOR=nano visudo
 ```
 and uncomment either
+
 > %wheel ALL=(ALL:ALL) ALL
+
 or
+
 > %wheel ALL=(ALL:ALL) NOPASSWD: ALL
 
 depending on whether you want to be asked for your password (user password) whenever you want to run with sudo.
@@ -492,13 +511,18 @@ pacman -S xorg plasma sddm
 ---
 
 For those with an nvidia GPU, firstly, my condolences, but importantly, we need to choose which nvidia driver to install based on the kernel.
+
 > Normal kernel = nvidia-open
+
 > LTS kernel = nvidia-open-lts
+
 > ZEN kernel = nvidia-open-zen
+
 **NOTE:** CachyOS also has its own nvidia driver.
 
 Alternatively, we can install the DKMS version, which is compatible for all kernels. (This will take a lot of time for each kernel/driver based install/update, unlike getting the specific driver)
-> nvidia-open-dkms
+
+> Any kernel = nvidia-open-dkms
 
 This is done by running
 ```sh
@@ -578,7 +602,9 @@ Some pacman apps are 32-bit based. We can (and should) enable these by opening
 sudo nano /etc/pacman.conf
 ```
 then uncommenting
+
 > [multilib]
+
 > Include = /etc/pacman.d/mirrorlist
 
 ---
@@ -610,6 +636,7 @@ The newer nvidia drivers have some issues with options that need to be added. (T
 sudo nano /etc/modprobe.d/nvidia.conf
 ```
 > options nvidia NVreg\_EnableGpuFirmware=0
+
 > options nvidia NVreg\_PreserveVideoMemoryAllocations=1
 
 It might help, it might not.
@@ -621,6 +648,7 @@ It might help, it might not.
 Basically everything on KDE, including some apps (like Konsole) have externally downloadable themes. These are all on the [KDE Theme Store](https://store.kde.org/browse) or downloadable from the *Get New* option in most tabs that allow downloadable themes. 
 
 The main theme can be accessible from
+
 > System Settings >> Colors & Themes >> Global Theme
 
 Here, the three dots allow you to access the KDE Theme store as well. 
@@ -679,11 +707,13 @@ mv <theme> ~/.cache/oh-my-posh/themes
 You can also adjust the themes through the konsole settings, and setting the font there. Make a profile, and edit the theme. You can get additional themes, blur the background and increase transparency and such.
 
 Want a floating terminal? Set a default location with
+
 > ALT-F3 >> More Actions >> Configure Special Application Settings...
 
 Set a Size and Position, set no Titlebar and Frame (You can access it with ALT-F3 at any point), then you have a floating terminal!
 
 You can remove the konsole bar at the top, by
+
 > Right click (anywhere) >> Menu >> Settings >> Toolbars Shown >> Disable both
 
 We can also add rounded corners and a slight boarder effect with
@@ -691,7 +721,9 @@ We can also add rounded corners and a slight boarder effect with
 yay -S kwin-effect-rounded-corners-git
 ```
 and
+
 > System Settings >> Window Management >> Desktop Effects >> Rounded Corners
+
 and untick *Disable Roundness on Tile*
 
 Happy configuring!
@@ -780,14 +812,21 @@ then enable in
 sudo nano /etc/environment
 ```
 and add
+
 > GTK\_IM\_MODULE=fcitx
+
 > QT\_IM\_MODULE=fcitx
+
 > XMODIFIERS=@im=fcitx
 
 and apply the fcitx5 in
+
 > Keyboard >> Virtual Keyboard
+
 restart, then
+
 > Input Method >> Add Input Method
+
 and add mozc/hangul
 
 ---
