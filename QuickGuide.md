@@ -341,6 +341,10 @@ sudo pacman -S linux-cachyos-lts-nvidia-open nvidia-utils lib32-nvidia-utils
 cpu:0:default,mem:0:default,gpu0:0:default
 ```
 
+## Turn off screen keybind
+
+> System settings >> Keyboard >> Shortcuts >> Power Management >> Turn Off Screen
+
 
 
 ## Osu:
