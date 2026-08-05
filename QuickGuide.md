@@ -345,7 +345,15 @@ cpu:0:default,mem:0:default,gpu0:0:default
 
 > System settings >> Keyboard >> Shortcuts >> Power Management >> Turn Off Screen
 
+## User BIN files
 
+```sh
+vim ~/.bashrc
+```
+
+```
+export PATH="$PATH:/home/mooshy/.local/bin:$HOME/bin"
+```
 
 ## Osu:
 
