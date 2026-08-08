@@ -355,6 +355,14 @@ vim ~/.bashrc
 export PATH="$PATH:/home/mooshy/.local/bin:$HOME/bin"
 ```
 
+## Tailscale
+
+```sh
+sudo pacman -S tailscale
+sudo systemctl enable --now tailscaled
+sudo tailscale set --operator=$USER
+```
+
 ## Osu:
 
 Size: 6,17; 44,41
