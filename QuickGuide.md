@@ -279,6 +279,27 @@ chmod +x videochanger
 sudo mv videochanger /usr/local/bin
 ```
 
+## SSH
+
+```sh
+sudo pacman -S openssh
+sudo systemctl enable --now sshd
+
+ssh-keygen -t ed25519 -C <label>
+```
+> Set file name in ~/.ssh/
+```sh
+ssh-copy-id -i <public key> <user>@<server ip>
+```
+
+> In ~/.ssh/config add:
+```
+Host <Hostname>
+  HostName <Hostname>
+  User <user>
+  IdentityFile ~/.ssh/<private key>
+```
+
 ## Sending files over ssh
 
 ```sh
@@ -374,7 +395,7 @@ git config --global credential.helper store
 
 ssh-keygen -t ed25519 -C "<email>"
 ```
-> /home/<user>/.ssh/github
+> /home/\<user\>/.ssh/github
 
 > copy .pub to github >> settings >> SSH and GPG
 
