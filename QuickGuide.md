@@ -417,6 +417,10 @@ git pull
 git branch -d <branch>
 ```
 
+lazy:
+```sh
+git add <files> && git commit -m <comment> && git push
+```
 
 ## Osu:
 
