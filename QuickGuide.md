@@ -363,6 +363,40 @@ sudo systemctl enable --now tailscaled
 sudo tailscale set --operator=$USER
 ```
 
+## Git
+
+setup
+```sh
+git config --global user.name "<username>"
+git config --global user.email "<email>"
+
+git config --global credential.helper store
+
+ssh-keygen -t ed25519 -C "<email>"
+```
+> /home/<user>/.ssh/github
+
+> copy .pub to github >> settings >> SSH and GPG
+
+workflow
+```sh
+git clone git@github:<username>/<repo>
+
+git checkout -b <branch>
+# >> do stuff
+git add <files>
+git commit -m <message>
+git push -u origin <branch>
+
+gh pr create --fill
+gh pr merge --merge
+
+git checkout main
+git pull
+git branch -d <branch>
+```
+
+
 ## Osu:
 
 Size: 6,17; 44,41
