@@ -82,7 +82,7 @@ You can either change the boot priority under *Boot*, or simply launch into the 
 
 ## 4. Installing on Live ISO
 
-This part is different on other linux distros. Only follow these steps (You really can't follow these) if you are on Arch.
+This part is different on other linux distros. Only follow these steps (You really can't follow these otherwise) if you are on Arch.
 
 **NOTE:** IF PAUSING THE INSTALL AT ANY POINT, SHUTDOWN THE COMPUTER USING THE STEPS UNDER REBOOTING RIGHT BEFORE CHAPTER 5.
 
